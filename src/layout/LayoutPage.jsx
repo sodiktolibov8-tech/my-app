@@ -1,16 +1,17 @@
 import React from 'react'
-import Header from '../components/Header'
-import { Outlet } from 'react-router-dom'
-import Footer from '../components/Footer'
 
-export default function Layout() {
+import HeaderPart from '../components/HeaderPart'
+import FooterPart from '../components/FooterPart'
+import { Outlet } from 'react-router-dom'
+
+export default function LayoutPage() {
     return (
         <div className="[100vh]">
-            <Header />
+            <HeaderPart />
             <main className="[110vh]">
                 <Outlet />
             </main>
-            <Footer />
+            <FooterPart />
         </div>
     )
 }

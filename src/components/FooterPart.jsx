@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Footer() {
+export default function FooterPart() {
   return (
     <div>
       <footer className="text-gray-600 body-font">
