@@ -4,7 +4,8 @@ import './App.css'
 import FirstPage from './pages/FirstPage'
 import MainPage from './pages/MainPage'
 import SettingPage from './pages/SettingPage'
-import LayoutPage from './layout/LayoutPAge'
+import LayoutPages from './layout/LayoutPages'
+// import LayoutPage from './layout/LayoutPAge'
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route element={<LayoutPage />}>
+        <Route element={<LayoutPages />}>
           <Route path='/' element={<MainPage />} />
           <Route path='/first' element={<FirstPage />} />
           <Route path='/setting' element={<SettingPage />} />
