@@ -1,11 +1,27 @@
-import React from 'react'
-import AlifLearningImg from "../assets/d5bb19e6-eb41-41f1-922c-996f0723bbd2.jpg"
+import React from 'react';
+// Импортируем иконки для каждого этапа таймлайна
+import { ShieldCheck, Activity, Code2, Award, Sparkles, CheckCircle2 } from 'lucide-react';
+import AlifLearningImg from "../assets/d5bb19e6-eb41-41f1-922c-996f0723bbd2.jpg";
 
 export default function MainPage() {
   return (
-    <>
-      <section className="text-gray-600 body-font bg-gradient-to-b from-slate-50 via-white to-indigo-50/20 py-12">
-        <div className="container px-5 py-12 mx-auto flex flex-wrap">
+    <main className="min-h-screen bg-slate-50">
+      <section className="text-gray-600 body-font bg-gradient-to-b from-slate-50 via-white to-indigo-50/30 py-12">
+        <div className="container px-5 py-8 mx-auto">
+          
+          {/* Главный заголовок секции */}
+          <div className="flex flex-col text-center w-full mb-12">
+            <span className="inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-bold tracking-widest uppercase rounded-full bg-emerald-100 text-emerald-700 w-fit mx-auto mb-3">
+              <Sparkles className="w-3.5 h-3.5" /> Frontend Developer
+            </span>
+            <h1 className="sm:text-4xl text-3xl font-extrabold text-slate-900 mb-4">
+              Мой путь обучения в <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-indigo-600">Alif Academy</span>
+            </h1>
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-slate-600 text-base">
+              Пошаговый прогресс превращения из новичка в уверенного разработчика SPA-приложений на React и Tailwind CSS.
+            </p>
+          </div>
+
           <div className="flex flex-wrap w-full items-center">
             
             {/* Левая часть: Таймлайн обучения */}
@@ -16,25 +32,15 @@ export default function MainPage() {
                 <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                   <div className="h-full w-1 bg-gradient-to-b from-indigo-500 to-amber-500 pointer-events-none" />
                 </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-600 inline-flex items-center justify-center text-white relative z-10 shadow-lg shadow-indigo-500/30 group-hover:scale-110 transition-transform">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-600 inline-flex items-center justify-center text-white relative z-10 shadow-lg shadow-indigo-500/30 group-hover:scale-110 transition-transform duration-300">
+                  <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div className="flex-grow pl-4">
                   <h2 className="font-bold title-font text-xs text-indigo-600 mb-1 tracking-widest uppercase">
                     Месяц 1: HTML5 & CSS3
                   </h2>
-                  <p className="leading-relaxed text-gray-600 text-sm">
-                    Освоил семантическую верстку, адаптивный дизайн, Flexbox и CSS Grid. Нашел удобный стилизатор <span className="text-indigo-600 font-semibold">Tailwind CSS</span> для быстрой верстки интерфейсов.
+                  <p className="leading-relaxed text-slate-600 text-sm">
+                    Освоил семантическую верстку, адаптивный дизайн, Flexbox и CSS Grid. Активно использую фреймворк <span className="text-indigo-600 font-semibold">Tailwind CSS</span> для быстрой и чистой верстки.
                   </p>
                 </div>
               </div>
@@ -44,25 +50,15 @@ export default function MainPage() {
                 <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                   <div className="h-full w-1 bg-gradient-to-b from-amber-500 to-cyan-500 pointer-events-none" />
                 </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-amber-500 inline-flex items-center justify-center text-white relative z-10 shadow-lg shadow-amber-500/30 group-hover:scale-110 transition-transform">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                  </svg>
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-amber-500 inline-flex items-center justify-center text-white relative z-10 shadow-lg shadow-amber-500/30 group-hover:scale-110 transition-transform duration-300">
+                  <Activity className="w-5 h-5" />
                 </div>
                 <div className="flex-grow pl-4">
                   <h2 className="font-bold title-font text-xs text-amber-600 mb-1 tracking-widest uppercase">
                     Месяц 2: JavaScript ES6+
                   </h2>
-                  <p className="leading-relaxed text-gray-600 text-sm">
-                    Изучил базовый JS, работу с DOM-деревом, асинхронность (<span className="text-amber-600 font-medium">Promises, async/await</span>), API (Fetch/Axios) и Git/GitHub для командной разработки.
+                  <p className="leading-relaxed text-slate-600 text-sm">
+                    Изучил базовый JS, работу с DOM-деревом, асинхронность (<span className="text-amber-600 font-semibold">Promises, async/await</span>), работу с API (Fetch/Axios) и Git/GitHub для командной разработки.
                   </p>
                 </div>
               </div>
@@ -72,26 +68,15 @@ export default function MainPage() {
                 <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                   <div className="h-full w-1 bg-gradient-to-b from-cyan-500 to-purple-500 pointer-events-none" />
                 </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-cyan-500 inline-flex items-center justify-center text-white relative z-10 shadow-lg shadow-cyan-500/30 group-hover:scale-110 transition-transform">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle cx={12} cy={5} r={3} />
-                    <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3" />
-                  </svg>
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-cyan-500 inline-flex items-center justify-center text-white relative z-10 shadow-lg shadow-cyan-500/30 group-hover:scale-110 transition-transform duration-300">
+                  <Code2 className="w-5 h-5" />
                 </div>
                 <div className="flex-grow pl-4">
                   <h2 className="font-bold title-font text-xs text-cyan-600 mb-1 tracking-widest uppercase">
                     Месяц 3: React Ecosystem
                   </h2>
-                  <p className="leading-relaxed text-gray-600 text-sm">
-                    Погрузился в React (компоненты, хуки, React Router DOM), научился управлять глобальным состоянием с помощью <span className="text-cyan-600 font-medium">Zustand</span> и собирать приложения на Vite.
+                  <p className="leading-relaxed text-slate-600 text-sm">
+                    Погрузился в React (компоненты, хуки, React Router DOM), научился управлять глобальным состоянием с помощью <span className="text-cyan-600 font-semibold">Zustand</span> и собирать приложения на Vite.
                   </p>
                 </div>
               </div>
@@ -101,52 +86,30 @@ export default function MainPage() {
                 <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
                   <div className="h-full w-1 bg-gradient-to-b from-purple-500 to-emerald-500 pointer-events-none" />
                 </div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-600 inline-flex items-center justify-center text-white relative z-10 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                    <circle cx={12} cy={7} r={4} />
-                  </svg>
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-600 inline-flex items-center justify-center text-white relative z-10 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform duration-300">
+                  <Award className="w-5 h-5" />
                 </div>
                 <div className="flex-grow pl-4">
                   <h2 className="font-bold title-font text-xs text-purple-600 mb-1 tracking-widest uppercase">
                     Практика и Портфолио
                   </h2>
-                  <p className="leading-relaxed text-gray-600 text-sm">
-                    Закрепил знания созданием собственных веб-приложений (Todo App, динамические панели) с маршрутизацией и стейт-менеджментом.
+                  <p className="leading-relaxed text-slate-600 text-sm">
+                    Закрепил знания созданием собственных веб-приложений (Todo App, динамические панели управления) с навигацией и стейт-менеджментом.
                   </p>
                 </div>
               </div>
 
               {/* ФИНАЛ */}
               <div className="flex relative group">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500 inline-flex items-center justify-center text-white relative z-10 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="w-5 h-5"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                    <path d="M22 4L12 14.01l-3-3" />
-                  </svg>
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500 inline-flex items-center justify-center text-white relative z-10 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform duration-300">
+                  <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div className="flex-grow pl-4">
                   <h2 className="font-bold title-font text-xs text-emerald-600 mb-1 tracking-widest uppercase">
                     Выпуск и старт в IT
                   </h2>
-                  <p className="leading-relaxed text-gray-600 text-sm">
-                    Успешное завершение обучения в <span className="text-emerald-600 font-semibold">Alif Academy</span>, готовое портфолио и база для работы Junior Frontend Developer! ✨
+                  <p className="leading-relaxed text-slate-600 text-sm">
+                    Успешное завершение обучения в <span className="text-emerald-600 font-semibold">Alif Academy</span>, готовые проекты и база для работы Junior Frontend Developer! ✨
                   </p>
                 </div>
               </div>
@@ -156,18 +119,30 @@ export default function MainPage() {
             {/* Правая часть: Картинка с красивой рамкой и тенью */}
             <div className="lg:w-3/5 md:w-1/2 md:mt-0 mt-12 p-2">
               <div className="relative group">
+                {/* Неоновое свечение на фоне */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
+                
+                {/* Изображение */}
                 <img
-                  className="relative rounded-2xl shadow-xl w-full object-cover object-center transform group-hover:scale-[1.01] transition duration-300"
+                  className="relative rounded-2xl shadow-2xl w-full object-cover object-center transform group-hover:scale-[1.01] transition duration-300 border border-white/20"
                   src={AlifLearningImg}
                   alt="Alif Academy Frontend Course Learning Path"
                 />
+
+                {/* Бейджик поверх картинки */}
+                <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-4 rounded-xl border border-white/50 shadow-lg flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">Курс пройден</span>
+                  </div>
+                  <span className="text-xs font-semibold text-indigo-600">Alif Academy</span>
+                </div>
               </div>
             </div>
 
           </div>
         </div>
       </section>
-    </>
-  )
+    </main>
+  );
 }

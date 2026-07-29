@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
-
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 body.light {
-    background: white;
-    color: black;
+  background-color: #ffffff;
+  color: #0f172a;
 }
 
 body.dark {
-    background: black;
-    color: green;
+  background-color: #0f172a; /* Темно-синий/серый фон вместо чисто черного */
+  color: #f8fafc;
 }
