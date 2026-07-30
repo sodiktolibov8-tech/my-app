@@ -34,6 +34,11 @@ export default function HeaderPart() {
     }
   }, [])
 
+  // Твой реальный номер без '+' и пробелов
+  const whatsappNumber = '992907161771'
+  // Готовое сообщение (необязательно, но удобно)
+  const defaultText = encodeURIComponent('Привет! Я посмотрел твое портфолио и хочу написать тебе.')
+
   // Все направления в Навбаре
   const menuItems = [
     { to: '/', label: 'Главная', icon: Home },
@@ -41,17 +46,22 @@ export default function HeaderPart() {
     { to: '/projects', label: 'Проекты', icon: FolderGit2 },
     { to: '/about', label: 'Обо мне', icon: User },
     { to: '/contact', label: 'Контакты', icon: Mail },
-    { to: '/setting', label: 'партфолио', icon: Settings },
+    { to: '/setting', label: 'Портфолио', icon: Settings },
+    {
+      to: `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${defaultText}`,
+      label: 'WhatsApp',
+      icon: MessageCircle,
+      isExternal: true
+    },
   ]
 
   return (
-    <header className={`sticky top-0 z-50 border-b backdrop-blur-md transition-all duration-300 ${
-      isDark 
-        ? 'bg-slate-950/90 border-slate-800 text-white shadow-lg' 
+    <header className={`sticky top-0 z-50 border-b backdrop-blur-md transition-all duration-300 ${isDark
+        ? 'bg-slate-950/90 border-slate-800 text-white shadow-lg'
         : 'bg-white/90 border-gray-100 text-gray-900 shadow-sm'
-    }`}>
+      }`}>
       <div className="container mx-auto flex p-4 items-center justify-between">
-        
+
         {/* Логотип Alif Academy */}
         <NavLink to="/" className="flex title-font font-medium items-center group">
           <div className="w-10 h-10 text-white p-2 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform flex items-center justify-center">
@@ -75,15 +85,14 @@ export default function HeaderPart() {
 
         {/* Правый блок: Гамбургер-меню и Кнопка Темы */}
         <div className="flex items-center gap-3 relative" ref={menuRef}>
-          
+
           {/* Кнопка-гамбургер */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`p-2.5 rounded-xl border text-sm transition-all active:scale-95 ${
-              isDark 
-                ? 'bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800' 
+            className={`p-2.5 rounded-xl border text-sm transition-all active:scale-95 ${isDark
+                ? 'bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800'
                 : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'
-            }`}
+              }`}
             aria-label="Открыть меню"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,30 +109,51 @@ export default function HeaderPart() {
             <span>{isDark ? 'Темная' : 'Светлая'}</span>
           </button>
 
-          {/* Выпадающее меню с направлениями */}
+          {/* Выпадающее меню */}
           {isOpen && (
-            <div className={`absolute right-0 top-14 w-56 rounded-2xl shadow-2xl border p-2 z-50 transition-all ${
-              isDark 
-                ? 'bg-slate-900 border-slate-800 text-slate-200' 
+            <div className={`absolute right-0 top-14 w-56 rounded-2xl shadow-2xl border p-2 z-50 transition-all ${isDark
+                ? 'bg-slate-900 border-slate-800 text-slate-200'
                 : 'bg-white border-slate-100 text-slate-700'
-            }`}>
+              }`}>
               <div className="flex flex-col gap-1">
                 {menuItems.map((item) => {
                   const Icon = item.icon;
+                  const linkClass = `flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${isDark
+                      ? 'hover:bg-slate-800 hover:text-white'
+                      : 'hover:bg-gray-50 hover:text-gray-900'
+                    }`;
+
+                  // Для внешней ссылки (WhatsApp) используем <a>
+                  if (item.isExternal) {
+                    return (
+                      <a
+                        key={item.label}
+                        href={item.to}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsOpen(false)}
+                        className={`${linkClass} text-emerald-500 hover:text-emerald-400 font-semibold`}
+                      >
+                        {Icon && <Icon className="w-4 h-4" />}
+                        <span>{item.label}</span>
+                      </a>
+                    );
+                  }
+
+                  // Для внутренних маршрутов используем NavLink
                   return (
                     <NavLink
                       key={item.to}
                       to={item.to}
                       onClick={() => setIsOpen(false)}
                       className={({ isActive }) =>
-                        `flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                          isActive
-                            ? isDark
-                              ? 'bg-blue-600/20 text-blue-400 font-semibold'
-                              : 'bg-indigo-50 text-indigo-600 font-semibold'
-                            : isDark
-                              ? 'hover:bg-slate-800 hover:text-white'
-                              : 'hover:bg-gray-50 hover:text-gray-900'
+                        `flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${isActive
+                          ? isDark
+                            ? 'bg-blue-600/20 text-blue-400 font-semibold'
+                            : 'bg-indigo-50 text-indigo-600 font-semibold'
+                          : isDark
+                            ? 'hover:bg-slate-800 hover:text-white'
+                            : 'hover:bg-gray-50 hover:text-gray-900'
                         }`
                       }
                     >
