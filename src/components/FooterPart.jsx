@@ -2,12 +2,12 @@ import React from 'react'
 
 export default function FooterPart() {
   return (
-    <footer className="text-gray-600 body-font bg-slate-900 text-white border-t border-slate-800">
-      <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <footer className="w-full border-t backdrop-blur-md transition-all duration-300 bg-white/90 border-gray-100 text-gray-900 dark:bg-slate-950/90 dark:border-slate-800 dark:text-white">
+      <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
         
         {/* Логотип и Название */}
-        <a className="flex title-font font-medium items-center md:justify-start justify-center text-white group cursor-pointer">
-          <div className="w-10 h-10 text-white p-2 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-xl shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform flex items-center justify-center">
+        <a className="flex title-font font-medium items-center md:justify-start justify-center text-slate-900 dark:text-white group cursor-pointer">
+          <div className="w-10 h-10 text-white p-2 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform flex items-center justify-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -21,15 +21,15 @@ export default function FooterPart() {
               <path d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <span className="ml-3 text-xl font-bold tracking-wide bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">
+          <span className="ml-3 text-xl font-bold tracking-wide text-slate-900 dark:text-white">
             Alif Academy
           </span>
         </a>
 
         {/* Копирайт и информация */}
-        <p className="text-sm text-slate-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-slate-800 sm:py-2 sm:mt-0 mt-4">
+        <p className="text-sm text-gray-500 dark:text-slate-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 dark:sm:border-slate-800 sm:py-2 sm:mt-0 mt-4">
           © 2026 Alif Academy —
-          <span className="text-indigo-400 ml-1 font-medium">
+          <span className="text-indigo-600 dark:text-indigo-400 ml-1 font-medium">
             Frontend Development Course
           </span>
         </p>
@@ -40,7 +40,7 @@ export default function FooterPart() {
           {/* Facebook */}
           <a 
             href="#" 
-            className="w-9 h-9 rounded-lg bg-slate-800/80 flex items-center justify-center text-slate-400 hover:text-white hover:bg-indigo-600 transition-all duration-200 hover:-translate-y-1 shadow-md"
+            className="w-9 h-9 rounded-lg bg-gray-100 dark:bg-slate-800/80 flex items-center justify-center text-gray-600 dark:text-slate-400 hover:text-white hover:bg-blue-600 dark:hover:bg-indigo-600 transition-all duration-200 hover:-translate-y-1 shadow-sm"
             aria-label="Facebook"
           >
             <svg
@@ -58,7 +58,7 @@ export default function FooterPart() {
           {/* Twitter / X */}
           <a 
             href="#" 
-            className="w-9 h-9 rounded-lg bg-slate-800/80 flex items-center justify-center text-slate-400 hover:text-white hover:bg-indigo-600 transition-all duration-200 hover:-translate-y-1 shadow-md"
+            className="w-9 h-9 rounded-lg bg-gray-100 dark:bg-slate-800/80 flex items-center justify-center text-gray-600 dark:text-slate-400 hover:text-white hover:bg-blue-500 dark:hover:bg-indigo-600 transition-all duration-200 hover:-translate-y-1 shadow-sm"
             aria-label="Twitter"
           >
             <svg
@@ -76,7 +76,7 @@ export default function FooterPart() {
           {/* Instagram */}
           <a 
             href="#" 
-            className="w-9 h-9 rounded-lg bg-slate-800/80 flex items-center justify-center text-slate-400 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 transition-all duration-200 hover:-translate-y-1 shadow-md"
+            className="w-9 h-9 rounded-lg bg-gray-100 dark:bg-slate-800/80 flex items-center justify-center text-gray-600 dark:text-slate-400 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 transition-all duration-200 hover:-translate-y-1 shadow-sm"
             aria-label="Instagram"
           >
             <svg
@@ -96,7 +96,7 @@ export default function FooterPart() {
           {/* LinkedIn */}
           <a 
             href="#" 
-            className="w-9 h-9 rounded-lg bg-slate-800/80 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all duration-200 hover:-translate-y-1 shadow-md"
+            className="w-9 h-9 rounded-lg bg-gray-100 dark:bg-slate-800/80 flex items-center justify-center text-gray-600 dark:text-slate-400 hover:text-white hover:bg-blue-600 transition-all duration-200 hover:-translate-y-1 shadow-sm"
             aria-label="LinkedIn"
           >
             <svg
