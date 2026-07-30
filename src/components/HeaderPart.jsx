@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
-import { Home, LayoutGrid, Settings, User, FolderGit2, Mail } from 'lucide-react'
+import { Home, LayoutGrid, Settings, User, FolderGit2, Mail, MessageCircle } from 'lucide-react' // Добавили MessageCircle
 
 export default function HeaderPart() {
   const [isOpen, setIsOpen] = useState(false)
