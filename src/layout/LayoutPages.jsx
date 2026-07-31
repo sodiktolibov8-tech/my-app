@@ -1,18 +1,16 @@
-import React from 'react'
+// layout/LayoutPages.jsx
+import { Outlet } from 'react-router-dom'
 import HeaderPart from '../components/HeaderPart'
 import FooterPart from '../components/FooterPart'
-import { Outlet } from 'react-router-dom'
 
 export default function LayoutPages() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-white transition-colors duration-300 flex flex-col justify-between">
+    // Добавьте dark:bg-slate-950 сюды
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 flex flex-col justify-between">
       <HeaderPart />
-      
-      {/* main растягивается и занимает всё свободное место */}
       <main className="flex-grow">
         <Outlet />
       </main>
-      
       <FooterPart />
     </div>
   )

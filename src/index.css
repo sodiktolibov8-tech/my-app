@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* 1. Настраиваем Tailwind v4 на работу с классом .dark на теге html или body */
+@variant dark (&:where(.dark, .dark *));
+
+/* 2. Настраиваем плавно меняющиеся базовые стили для body */
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -10,6 +14,6 @@ body.light {
 }
 
 body.dark {
-  background-color: #0f172a; /* Темно-синий/серый фон вместо чисто черного */
+  background-color: #0f172a;
   color: #f8fafc;
 }

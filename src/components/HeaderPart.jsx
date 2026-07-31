@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useAppStore } from '../store/useAppStore'
-import { Home, LayoutGrid, Settings, User, FolderGit2, Mail, MessageCircle } from 'lucide-react' // Добавили MessageCircle
+import { Home, LayoutGrid, Settings, User, FolderGit2, Mail, MessageCircle } from 'lucide-react'
 
 export default function HeaderPart() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,12 +12,17 @@ export default function HeaderPart() {
   const toggleTheme = useAppStore((state) => state.toggleTheme)
   const isDark = theme === 'dark'
 
-  // Синхронизация класса 'dark' с <html>
+  // Синхронизация классов и с <html> (для Tailwind), и с <body>
   useEffect(() => {
+    const root = document.documentElement
+    const body = document.body
+
     if (isDark) {
-      document.documentElement.classList.add('dark')
+      root.classList.add('dark')
+      body.className = 'dark'
     } else {
-      document.documentElement.classList.remove('dark')
+      root.classList.remove('dark')
+      body.className = 'light'
     }
   }, [isDark])
 
@@ -34,12 +39,9 @@ export default function HeaderPart() {
     }
   }, [])
 
-  // Твой реальный номер без '+' и пробелов
   const whatsappNumber = '992907161771'
-  // Готовое сообщение (необязательно, но удобно)
   const defaultText = encodeURIComponent('Привет! Я посмотрел твое портфолио и хочу написать тебе.')
 
-  // Все направления в Навбаре
   const menuItems = [
     { to: '/', label: 'Главная', icon: Home },
     { to: '/first', label: 'Модули', icon: LayoutGrid },
@@ -57,8 +59,8 @@ export default function HeaderPart() {
 
   return (
     <header className={`sticky top-0 z-50 border-b backdrop-blur-md transition-all duration-300 ${isDark
-        ? 'bg-slate-950/90 border-slate-800 text-white shadow-lg'
-        : 'bg-white/90 border-gray-100 text-gray-900 shadow-sm'
+      ? 'bg-slate-950/90 border-slate-800 text-white shadow-lg'
+      : 'bg-white/90 border-gray-100 text-gray-900 shadow-sm'
       }`}>
       <div className="container mx-auto flex p-4 items-center justify-between">
 
@@ -90,8 +92,8 @@ export default function HeaderPart() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`p-2.5 rounded-xl border text-sm transition-all active:scale-95 ${isDark
-                ? 'bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800'
-                : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'
+              ? 'bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800'
+              : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'
               }`}
             aria-label="Открыть меню"
           >
@@ -102,8 +104,9 @@ export default function HeaderPart() {
 
           {/* Кнопка смены темы */}
           <button
+            type="button"
             onClick={toggleTheme}
-            className="inline-flex items-center font-medium bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-0 py-2 px-4 focus:outline-none hover:opacity-90 rounded-xl text-sm shadow-md shadow-indigo-500/20 active:scale-95 transition-all"
+            className="inline-flex items-center font-medium bg-gradient-to-r from-indigo-600 to-purple-600 text-white border-0 py-2 px-4 focus:outline-none hover:opacity-90 rounded-xl text-sm shadow-md shadow-indigo-500/20 active:scale-95 transition-all cursor-pointer"
           >
             <span className="mr-1.5 text-base">{isDark ? '🌙' : '☀️'}</span>
             <span>{isDark ? 'Темная' : 'Светлая'}</span>
@@ -112,18 +115,17 @@ export default function HeaderPart() {
           {/* Выпадающее меню */}
           {isOpen && (
             <div className={`absolute right-0 top-14 w-56 rounded-2xl shadow-2xl border p-2 z-50 transition-all ${isDark
-                ? 'bg-slate-900 border-slate-800 text-slate-200'
-                : 'bg-white border-slate-100 text-slate-700'
+              ? 'bg-slate-900 border-slate-800 text-slate-200'
+              : 'bg-white border-slate-100 text-slate-700'
               }`}>
               <div className="flex flex-col gap-1">
                 {menuItems.map((item) => {
                   const Icon = item.icon;
                   const linkClass = `flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${isDark
-                      ? 'hover:bg-slate-800 hover:text-white'
-                      : 'hover:bg-gray-50 hover:text-gray-900'
+                    ? 'hover:bg-slate-800 hover:text-white'
+                    : 'hover:bg-gray-50 hover:text-gray-900'
                     }`;
 
-                  // Для внешней ссылки (WhatsApp) используем <a>
                   if (item.isExternal) {
                     return (
                       <a
@@ -140,7 +142,6 @@ export default function HeaderPart() {
                     );
                   }
 
-                  // Для внутренних маршрутов используем NavLink
                   return (
                     <NavLink
                       key={item.to}

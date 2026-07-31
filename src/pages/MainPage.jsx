@@ -5,19 +5,19 @@ import AlifLearningImg from "../assets/d5bb19e6-eb41-41f1-922c-996f0723bbd2.jpg"
 
 export default function MainPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
-      <section className="text-gray-600 body-font bg-gradient-to-b from-slate-50 via-white to-indigo-50/30 py-12">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+      <section className="text-gray-600 dark:text-gray-300 body-font bg-gradient-to-b from-slate-50 via-white to-indigo-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950/50 py-12 transition-colors duration-300">
         <div className="container px-5 py-8 mx-auto">
           
           {/* Главный заголовок секции */}
           <div className="flex flex-col text-center w-full mb-12">
-            <span className="inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-bold tracking-widest uppercase rounded-full bg-emerald-100 text-emerald-700 w-fit mx-auto mb-3">
+            <span className="inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-bold tracking-widest uppercase rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50 w-fit mx-auto mb-3">
               <Sparkles className="w-3.5 h-3.5" /> Frontend Developer
             </span>
-            <h1 className="sm:text-4xl text-3xl font-extrabold text-slate-900 mb-4">
-              Мой путь обучения в <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-indigo-600">Alif Academy</span>
+            <h1 className="sm:text-4xl text-3xl font-extrabold text-slate-900 dark:text-white mb-4">
+              Мой путь обучения в <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 via-indigo-600 to-purple-600 dark:from-emerald-400 dark:via-indigo-400 dark:to-purple-400">Alif Academy</span>
             </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-slate-600 text-base">
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-slate-600 dark:text-slate-400 text-base">
               Пошаговый прогресс превращения из новичка в уверенного разработчика SPA-приложений на React и Tailwind CSS.
             </p>
           </div>
@@ -36,11 +36,11 @@ export default function MainPage() {
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div className="flex-grow pl-4">
-                  <h2 className="font-bold title-font text-xs text-indigo-600 mb-1 tracking-widest uppercase">
+                  <h2 className="font-bold title-font text-xs text-indigo-600 dark:text-indigo-400 mb-1 tracking-widest uppercase">
                     Месяц 1: HTML5 & CSS3
                   </h2>
-                  <p className="leading-relaxed text-slate-600 text-sm">
-                    Освоил семантическую верстку, адаптивный дизайн, Flexbox и CSS Grid. Активно использую фреймворк <span className="text-indigo-600 font-semibold">Tailwind CSS</span> для быстрой и чистой верстки.
+                  <p className="leading-relaxed text-slate-600 dark:text-slate-400 text-sm">
+                    Освоил семантическую верстку, адаптивный дизайн, Flexbox и CSS Grid. Активно использую фреймворк <span className="text-indigo-600 dark:text-indigo-400 font-semibold">Tailwind CSS</span> для быстрой и чистой верстки.
                   </p>
                 </div>
               </div>
@@ -54,11 +54,11 @@ export default function MainPage() {
                   <Activity className="w-5 h-5" />
                 </div>
                 <div className="flex-grow pl-4">
-                  <h2 className="font-bold title-font text-xs text-amber-600 mb-1 tracking-widest uppercase">
+                  <h2 className="font-bold title-font text-xs text-amber-600 dark:text-amber-400 mb-1 tracking-widest uppercase">
                     Месяц 2: JavaScript ES6+
                   </h2>
-                  <p className="leading-relaxed text-slate-600 text-sm">
-                    Изучил базовый JS, работу с DOM-деревом, асинхронность (<span className="text-amber-600 font-semibold">Promises, async/await</span>), работу с API (Fetch/Axios) и Git/GitHub для командной разработки.
+                  <p className="leading-relaxed text-slate-600 dark:text-slate-400 text-sm">
+                    Изучил базовый JS, работу с DOM-деревом, асинхронность (<span className="text-amber-600 dark:text-amber-400 font-semibold">Promises, async/await</span>), работу с API (Fetch/Axios) и Git/GitHub для командной разработки.
                   </p>
                 </div>
               </div>
@@ -72,11 +72,11 @@ export default function MainPage() {
                   <Code2 className="w-5 h-5" />
                 </div>
                 <div className="flex-grow pl-4">
-                  <h2 className="font-bold title-font text-xs text-cyan-600 mb-1 tracking-widest uppercase">
+                  <h2 className="font-bold title-font text-xs text-cyan-600 dark:text-cyan-400 mb-1 tracking-widest uppercase">
                     Месяц 3: React Ecosystem
                   </h2>
-                  <p className="leading-relaxed text-slate-600 text-sm">
-                    Погрузился в React (компоненты, хуки, React Router DOM), научился управлять глобальным состоянием с помощью <span className="text-cyan-600 font-semibold">Zustand</span> и собирать приложения на Vite.
+                  <p className="leading-relaxed text-slate-600 dark:text-slate-400 text-sm">
+                    Погрузился в React (компоненты, хуки, React Router DOM), научился управлять глобальным состоянием с помощью <span className="text-cyan-600 dark:text-cyan-400 font-semibold">Zustand</span> и собирать приложения на Vite.
                   </p>
                 </div>
               </div>
@@ -90,10 +90,10 @@ export default function MainPage() {
                   <Award className="w-5 h-5" />
                 </div>
                 <div className="flex-grow pl-4">
-                  <h2 className="font-bold title-font text-xs text-purple-600 mb-1 tracking-widest uppercase">
+                  <h2 className="font-bold title-font text-xs text-purple-600 dark:text-purple-400 mb-1 tracking-widest uppercase">
                     Практика и Портфолио
                   </h2>
-                  <p className="leading-relaxed text-slate-600 text-sm">
+                  <p className="leading-relaxed text-slate-600 dark:text-slate-400 text-sm">
                     Закрепил знания созданием собственных веб-приложений (Todo App, динамические панели управления) с навигацией и стейт-менеджментом.
                   </p>
                 </div>
@@ -105,11 +105,11 @@ export default function MainPage() {
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div className="flex-grow pl-4">
-                  <h2 className="font-bold title-font text-xs text-emerald-600 mb-1 tracking-widest uppercase">
+                  <h2 className="font-bold title-font text-xs text-emerald-600 dark:text-emerald-400 mb-1 tracking-widest uppercase">
                     Выпуск и старт в IT
                   </h2>
-                  <p className="leading-relaxed text-slate-600 text-sm">
-                    Успешное завершение обучения в <span className="text-emerald-600 font-semibold">Alif Academy</span>, готовые проекты и база для работы Junior Frontend Developer! ✨
+                  <p className="leading-relaxed text-slate-600 dark:text-slate-400 text-sm">
+                    Успешное завершение обучения в <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Alif Academy</span>, готовые проекты и база для работы Junior Frontend Developer! ✨
                   </p>
                 </div>
               </div>
@@ -124,18 +124,18 @@ export default function MainPage() {
                 
                 {/* Изображение */}
                 <img
-                  className="relative rounded-2xl shadow-2xl w-full object-cover object-center transform group-hover:scale-[1.01] transition duration-300 border border-white/20"
+                  className="relative rounded-2xl shadow-2xl w-full object-cover object-center transform group-hover:scale-[1.01] transition duration-300 border border-white/20 dark:border-slate-800"
                   src={AlifLearningImg}
                   alt="Alif Academy Frontend Course Learning Path"
                 />
 
-                {/* Бейджик поверх картинки */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/80 backdrop-blur-md p-4 rounded-xl border border-white/50 shadow-lg flex items-center justify-between">
+                {/* Бейджик поверх картинки с эффектом стекла */}
+                <div className="absolute bottom-4 left-4 right-4 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-4 rounded-xl border border-white/50 dark:border-slate-800 shadow-lg flex items-center justify-between transition-colors">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">Курс пройден</span>
+                    <span className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider">Курс пройден</span>
                   </div>
-                  <span className="text-xs font-semibold text-indigo-600">Alif Academy</span>
+                  <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400">Alif Academy</span>
                 </div>
               </div>
             </div>
